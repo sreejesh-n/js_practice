@@ -9,6 +9,6 @@ function printEvenNumbers(number, evenStr) {
   return printEvenNumbers(number - 1, evenSeries);
 }
 
-const evenSeries = printEvenNumbers(10, "");
+const evenSeries = printEvenNumbers(20, "");
 
 console.log(evenSeries);
