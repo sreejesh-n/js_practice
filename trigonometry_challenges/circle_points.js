@@ -44,7 +44,7 @@ function tearDown() {
 function main() {
   const screenWidth = 400;
   const screenHeight = 400;
-  const title = "Spain";
+  const title = "Circle Points";
   const FPS = 60;
 
   setup(screenWidth, screenHeight, title, FPS);
