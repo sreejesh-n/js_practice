@@ -5,7 +5,7 @@ const HEIGHT = 400;
 const FPS = 60;
 
 function setup() {
-  r.InitWindow(WIDTH, HEIGHT, "Elipse");
+  r.InitWindow(WIDTH, HEIGHT, "Ellipse");
   r.SetTargetFPS(FPS);
 }
 
