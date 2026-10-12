@@ -7,8 +7,8 @@
 //
 // Do not modify the input parameters.
 
-function areArrays(array1, i, array2) {
-  return typeof array1[i] === "object" && typeof array2[i] === "object";
+function areArrays(array1, array2) {
+  return Array.isArray(array1) && Array.isArray(array2);
 }
 
 function areEqual(array1, array2) {
@@ -17,13 +17,11 @@ function areEqual(array1, array2) {
   }
 
   for (let i = 0; i < array1.length; i++) {
-    if (areArrays(array1, i, array2)) {
+    if (areArrays(array1[i], array2[i])) {
       if (!areEqual(array1[i], array2[i])) {
         return false;
       }
-    }
-
-    if (array1[i] !== array2[i]) {
+    } else if (array1[i] !== array2[i]) {
       return false;
     }
   }
@@ -31,27 +29,19 @@ function areEqual(array1, array2) {
   return true;
 }
 
-const array1 = [1, [2, 3, 4], 3];
-const array2 = [1, [2, 3, 4], 3];
-
-const res = areEqual(array1, array2);
-//
 console.log(
-  "arrays a, b should be result and they are ",
+  "arrays a, b should be true and they are ",
   areEqual([1, 2, 3, 4], [1, 2, 3, 4]),
-); // => true
+);
 console.log(
-  "arrays a, b should be result and they are ",
+  "arrays a, b should be false and they are ",
   areEqual([1, 2, 3], [1, 2, 3, 4]),
-); // => false
+);
 console.log(
-  "arrays a, b should be result and they are ",
+  "arrays a, b should be false and they are ",
   areEqual([1, 2, 3], [1, 3, 2]),
-); // => false
+);
 console.log(
-  "arrays a, b should be result and they are ",
+  "arrays a, b should be true and they are ",
   areEqual([1, [22], 3], [1, [22], 3]),
-); // => true
-//
-
-console.log(res);
+);
