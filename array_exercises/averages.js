@@ -1,14 +1,15 @@
 const r = require("raylib");
 const m = require("./math");
+const t = require("./arrayTestCases");
 
 function setup(WIDTH, HEIGHT, title, FPS) {
   r.InitWindow(WIDTH, HEIGHT, title);
   r.SetTargetFPS(FPS);
 
-  const data = [12, 45, 78, 23, 91, 56, 34, 67, 89, 40];
+  const data = t.randomData(1000);
 
-  const gap = 5;
-  const barWidth = 40;
+  const gap = 0;
+  const barWidth = 2;
 
   const largest = m.findLargest(data);
   const heightOfLargest = HEIGHT * 0.9;

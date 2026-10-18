@@ -3,6 +3,7 @@ const m = require("./math");
 const t = require("./arrayTestCases");
 
 function setup(WIDTH, HEIGHT, title, FPS) {
+  r.SetConfigFlags(r.FLAG_WINDOW_HIGHDPI);
   r.SetTraceLogLevel(r.LOG_NONE);
   r.InitWindow(WIDTH, HEIGHT, title);
   r.SetTargetFPS(FPS);
