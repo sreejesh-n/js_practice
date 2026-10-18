@@ -13,6 +13,10 @@ function calcDistance(x1, x2, y1, y2) {
   return Math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2);
 }
 
+function toDegrees(radian) {
+  return (radian * 180) / Math.PI;
+}
+
 function draw() {
   r.BeginDrawing();
   r.ClearBackground(r.BLACK);
@@ -24,7 +28,7 @@ function draw() {
   const perpDistance = calcDistance(pointB.x, pointC.x, pointB.y, pointC.y);
   const baseDistance = calcDistance(pointA.x, pointC.x, pointA.y, pointC.y);
 
-  const angle = (Math.atan2(perpDistance, baseDistance) * 180) / Math.PI;
+  const angle = toDegrees(Math.atan2(perpDistance, baseDistance));
 
   r.DrawCircleSector(pointA, 60, 90, 90 + angle, 360, r.YELLOW);
 
